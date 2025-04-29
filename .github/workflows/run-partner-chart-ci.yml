@@ -44,7 +44,7 @@ jobs:
         run: |
           echo "Pushing updated changes"
           git status
-          git log
+          git log -1 --stat
           git push origin main
 
       # Runs a set of commands using the runners shell
