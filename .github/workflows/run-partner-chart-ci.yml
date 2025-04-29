@@ -36,8 +36,8 @@ jobs:
         run: |
           ./scripts/pull-scripts
           echo "Configuring git"
-          git config user.name "${secrets.GH_USERNAME}"
-          git config user.email "${secrets.GH_EMAIL}
+          git config user.name "${{ secrets.GH_USERNAME }}"
+          git config user.email "${{ secrets.GH_EMAIL }}"
           PACKAGE=joget/joget ./bin/partner-charts-ci update --commit
           echo "Package Joget updated"
       - name: Push committed changes
