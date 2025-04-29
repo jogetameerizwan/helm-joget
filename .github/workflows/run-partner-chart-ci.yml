@@ -35,16 +35,18 @@ jobs:
       - name: Pull CI script, run script to generate new asset files and commit changes
         run: |
           ./scripts/pull-scripts
+          ls
           echo "Configuring git"
           git config user.name "${{ secrets.GH_USERNAME }}"
           git config user.email "${{ secrets.GH_EMAIL }}"
           PACKAGE=joget/joget ./bin/partner-charts-ci update --commit
+          ls
           echo "Package Joget updated"
-      - name: Push committed changes
-        run: |
-          echo "Pushing updated changes"
-          git status
-          git log -1 --stat
-          git push origin main
+      # - name: Push committed changes
+      #   run: |
+      #     echo "Pushing updated changes"
+      #     git status
+      #     git log -1 --stat
+      #     git push origin main
 
       # Runs a set of commands using the runners shell
