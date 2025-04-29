@@ -31,6 +31,7 @@ jobs:
         with:
           repository: jogetameerizwan/partner-charts
           ref: main-source
+          token: ${{ secrets.GH_PAT }}
       # Runs a single command using the runners shell
       - name: Pull CI script, run script to generate new asset files and commit changes
         run: |
